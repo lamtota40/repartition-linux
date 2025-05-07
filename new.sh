@@ -1,1 +1,2 @@
 lsblk
+parted /dev/vda
