@@ -8,3 +8,11 @@ yes
 yes
 EOF
 clear
+
+
+
+parted /dev/vda ---pretend-input-tty <<EOF
+resizepart 2 20GB
+yes
+quit
+EOF
