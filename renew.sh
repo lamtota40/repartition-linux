@@ -12,6 +12,7 @@ mkdir /mnt/data
 mount /dev/vda3 /mnt/data
 cd /mnt/data
 wget https://cdimage.ubuntu.com/lubuntu/releases/18.04/release/lubuntu-18.04-alternate-amd64.iso
+cd
 mkdir /mnt/iso
 mount -o loop lubuntu-18.04-alternate-amd64.iso /mnt/iso
 
