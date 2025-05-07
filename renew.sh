@@ -11,9 +11,9 @@ mkfs.btrfs -f -L data /dev/vda3
 mkdir /mnt/data
 mount /dev/vda3 /mnt/data
 cd /mnt/data
-wget http://cdimage.ubuntu.com/lubuntu/releases/18.04.6/release/lubuntu-18.04.6-alternate-amd64.iso
+wget https://cdimage.ubuntu.com/lubuntu/releases/18.04/release/lubuntu-18.04-alternate-amd64.iso
 mkdir /mnt/iso
-mount -o loop lubuntu-18.04.6-alternate-amd64.iso /mnt/iso
+mount -o loop lubuntu-18.04-alternate-amd64.iso /mnt/iso
 
 
 mkdir /mnt/boot
@@ -23,7 +23,7 @@ grub-install --boot-directory=/mnt/boot /dev/vda
 cat > /mnt/boot/grub/grub.cfg <<EOF
 set timeout=5
 menuentry "Install Lubuntu 18.04 (Alternate)" {
-    set isofile="/lubuntu-18.04.6-alternate-amd64.iso"
+    set isofile="/lubuntu-18.04-alternate-amd64.iso"
     loopback loop (hd0,3)\$isofile
     linux (loop)/install/vmlinuz iso-scan/filename=\$isofile --
     initrd (loop)/install/initrd.gz
