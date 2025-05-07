@@ -16,3 +16,6 @@ resizepart 2 20GB
 yes
 quit
 EOF
+parted /dev/vda --script mkpart primary btrfs 20GB 100%
+partprobe /dev/vda
+#cek lsblk akan muncul partisi baru /dev/vda3
